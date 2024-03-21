@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SubmissionIcon } from '../assets/SubmissionIcon'
+import { SubmissionIcon } from '../assets/SubmissionIcon';
 import AssignmentIcon from "../assets/AssignmentIcon";
 
 
@@ -9,16 +9,19 @@ const AppBar: React.FC = () => {
 
   return (
     <div className="flex justify-between items-center bg-gray-900 text-white p-4">
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', border: '2px solid white', padding: '10px', borderRadius: '5px' }}>
+      <div className="flex items-center gap-2 border-2 border-white p-2 rounded">
         <AssignmentIcon />
-        <h1 style={{ fontWeight: 'bold', fontSize: '20px', margin: 0 }}>Striver's Assignment</h1>
-    </div>
+        <h1 className="hidden md:block font-bold text-lg m-0">Striver's Assignment</h1> {/* Hide on smaller screens */}
+      </div>
+      <div className="hidden md:block"> {/* Hide text on smaller screens */}
+        Backend running on free instance which spins off when inactive, wait for 30 seconds to spin on
+      </div>
       <button
           className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => navigate('/submissions')}
         >
-          View Submitted CodeSnippets
-          <SubmissionIcon className="mr-2" /> 
+          <span className="hidden md:inline">View Submitted CodeSnippets</span> {/* Hide text on smaller screens */}
+          <SubmissionIcon className="ml-2" />
       </button>
     </div>
   );

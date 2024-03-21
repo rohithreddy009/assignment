@@ -17,7 +17,7 @@ export const SubmissionForm: React.FC = () => {
   });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [showSuccessPopup, setShowSuccessPopup] = useState<boolean>(false); // State to control success popup visibility
+  const [showSuccessPopup, setShowSuccessPopup] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -34,8 +34,8 @@ export const SubmissionForm: React.FC = () => {
     try {
       const response = await axios.post('https://strivers-assignment.onrender.com/submit', formData);
       console.log(response.data);
-      setShowSuccessPopup(true); // Show success popup on successful submission
-      setTimeout(() => setShowSuccessPopup(false), 3000); // Automatically hide popup after 3 seconds
+      setShowSuccessPopup(true); 
+      setTimeout(() => setShowSuccessPopup(false), 3000); 
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error('Failed to submit the form:', error.response?.data);
@@ -101,7 +101,7 @@ export const SubmissionForm: React.FC = () => {
             onChange={handleChange}
             required
             className="w-full p-4 rounded mt-1 bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:ring-blue-500"
-            style={{ height: '512px' }} // Directly setting the height to be twice of h-32 (128px * 2)
+            style={{ height: '512px' }}
           ></textarea>
       </div>
 
@@ -122,7 +122,7 @@ export const SubmissionForm: React.FC = () => {
           color: 'white',
           padding: '10px 20px', 
           borderRadius: '0 0 10px 10px',
-          zIndex: 1000, // Ensure it's above other content
+          zIndex: 1000, 
         }}>
           Uploaded Successfully
         </div>
