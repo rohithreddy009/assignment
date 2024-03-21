@@ -94,15 +94,18 @@ export const SubmissionForm: React.FC = () => {
         </div>
 
         <div>
-          <label htmlFor="sourceCode" className="text-white">Source Code:</label>
+          <label htmlFor="sourceCode" className="block mb-2 text-sm font-medium text-white">Source Code:</label>
           <textarea
             name="sourceCode"
             value={formData.sourceCode}
             onChange={handleChange}
             required
-            className="w-full p-2 rounded mt-1 h-32 bg-gray-700 text-white"
+            className="w-full p-4 rounded mt-1 bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:ring-blue-500"
+            style={{ height: '512px' }} // Directly setting the height to be twice of h-32 (128px * 2)
           ></textarea>
-        </div>
+      </div>
+
+
 
         <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" disabled={isLoading}>
           {isLoading ? 'Submitting...' : 'Submit'}
