@@ -32,7 +32,7 @@ export const SubmissionForm: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3001/submit', formData);
+      const response = await axios.post('https://strivers-assignment.onrender.com/submit', formData);
       console.log(response.data);
       setShowSuccessPopup(true); // Show success popup on successful submission
       setTimeout(() => setShowSuccessPopup(false), 3000); // Automatically hide popup after 3 seconds

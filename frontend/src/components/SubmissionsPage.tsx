@@ -139,7 +139,7 @@ export default SubmissionsPage;
 //   useEffect(() => {
 //     const fetchSubmissions = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:3001/submissions');
+//         const response = await axios.get('https://strivers-assignment.onrender.com/submissions');
 //         setSubmissions(response.data);
 //       } catch (error) {
 //         console.error("Failed to fetch submissions:", error);
