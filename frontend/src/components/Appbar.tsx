@@ -13,9 +13,6 @@ const AppBar: React.FC = () => {
         <AssignmentIcon />
         <h1 className="hidden md:block font-bold text-lg m-0">Striver's Assignment</h1> {/* Hide on smaller screens */}
       </div>
-      <div className="hidden md:block"> {/* Hide text on smaller screens */}
-        Backend running on free instance which spins off when inactive, wait for 30 seconds to spin on
-      </div>
       <button
           className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => navigate('/submissions')}
